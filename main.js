@@ -96,7 +96,8 @@ ws.on('message', function(data, flags) {
     io.emit('toogle led', data);
     ledState = !ledState; //invert the ledState
 });
-      
+
+console.log("hello:");
 
 http.listen(8000, function(){
     console.log('Web server Active listening on *:8000');
