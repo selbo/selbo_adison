@@ -40,53 +40,64 @@ var io = require('socket.io')(http);
 var connectedUsersArray = [];
 var userId;
 
-app.get('/', function(req, res) {
-    //Join all arguments together and normalize the resulting path.
-    res.sendFile(path.join(__dirname + '/client', 'index.html'));
-});
+//app.get('/', function(req, res) {
+//    //Join all arguments together and normalize the resulting path.
+//    res.sendFile(path.join(__dirname + '/client', 'index.html'));
+//});
 
-//Allow use of files in client folder
-app.use(express.static(__dirname + '/client'));
-app.use('/client', express.static(__dirname + '/client'));
+////Allow use of files in client folder
+//app.use(express.static(__dirname + '/client'));
+//app.use('/client', express.static(__dirname + '/client'));
 
 //Socket.io Event handlers
-io.on('connection', function(socket) {
-    console.log("\n Add new User: u"+connectedUsersArray.length);
-    if(connectedUsersArray.length > 0) {
-        var element = connectedUsersArray[connectedUsersArray.length-1];
-        userId = 'u' + (parseInt(element.replace("u", ""))+1);
-    }
-    else {
-        userId = "u0";
-    }
-    console.log('a user connected: '+userId);
-    io.emit('user connect', userId);
-    connectedUsersArray.push(userId);
-    console.log('Number of Users Connected ' + connectedUsersArray.length);
-    console.log('User(s) Connected: ' + connectedUsersArray);
-    io.emit('connected users', connectedUsersArray);
-    
-    socket.on('user disconnect', function(msg) {
-        console.log('remove: ' + msg);
-        connectedUsersArray.splice(connectedUsersArray.lastIndexOf(msg), 1);
-        io.emit('user disconnect', msg);
-    });
-    
-    socket.on('chat message', function(msg) {
-        io.emit('chat message', msg);
-        console.log('message: ' + msg.value);
-    });
-    
-    socket.on('toogle led', function(msg) {
-        myOnboardLed.write(ledState?1:0); //if ledState is true then write a '1' (high) otherwise write a '0' (low)
-        msg.value = ledState;
-        io.emit('toogle led', msg);
-        ledState = !ledState; //invert the ledState
-    });
-    
+//io.on('connection', function(socket) {
+//    console.log("\n Add new User: u"+connectedUsersArray.length);
+//    if(connectedUsersArray.length > 0) {
+//        var element = connectedUsersArray[connectedUsersArray.length-1];
+//        userId = 'u' + (parseInt(element.replace("u", ""))+1);
+//    }
+//    else {
+//        userId = "u0";
+//    }
+//    console.log('a user connected: '+userId);
+//    io.emit('user connect', userId);
+//    connectedUsersArray.push(userId);
+//    console.log('Number of Users Connected ' + connectedUsersArray.length);
+//    console.log('User(s) Connected: ' + connectedUsersArray);
+//    io.emit('connected users', connectedUsersArray);
+//    
+//    socket.on('user disconnect', function(msg) {
+//        console.log('remove: ' + msg);
+//        connectedUsersArray.splice(connectedUsersArray.lastIndexOf(msg), 1);
+//        io.emit('user disconnect', msg);
+//    });
+//    
+//    socket.on('toogle led', function(msg) {
+//        myOnboardLed.write(ledState?1:0); //if ledState is true then write a '1' (high) otherwise write a '0' (low)
+//        msg.value = ledState;
+//        io.emit('toogle led', msg);
+//        ledState = !ledState; //invert the ledState
+//    });
+//    
+//});
+
+var WebSocket = require('ws');
+var ws = new WebSocket('ws://echo.websocket.org');
+ws.on('open', function open() {
+ws.send('Connected! What State should I be in?');
+    var jsonString='"Type": "message", "data":1';
+  ws.send(jsonString);
 });
 
+ws.on('message', function(data, flags) {
+    console.log("received:"+data);
+    myOnboardLed.write(ledState?1:0); //if ledState is true then write a '1' (high) otherwise write a '0' (low)
+    data.value = ledState;
+    io.emit('toogle led', data);
+    ledState = !ledState; //invert the ledState
+});
+      
 
-http.listen(3000, function(){
-    console.log('Web server Active listening on *:3000');
+http.listen(8000, function(){
+    console.log('Web server Active listening on *:8000');
 });

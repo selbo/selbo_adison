@@ -35,8 +35,7 @@ The necessary information needed for creating a web socket (socket.io) applicati
 ```javascript
 var mraa = require('mraa'); //require mraa
 console.log('MRAA Version: ' + mraa.getVersion()); //write the mraa version to the Intel XDK console
-//var myOnboardLed = new mraa.Gpio(3, false, true); //LED hooked up to digital pin (or built in pin on Galileo Gen1)
-var myOnboardLed = new mraa.Gpio(13); //LED hooked up to digital pin 13 (or built in pin on Intel Galileo Gen2 as well as Intel Edison)
+var myOnboardLed = new mraa.Gpio(9); //LED hooked up to digital pin 9 (or built in pin on Intel Galileo Gen2 as well as Intel Edison)
 myOnboardLed.dir(mraa.DIR_OUT); //set the gpio direction to output
 var ledState = true; //Boolean to hold the state of Led
 
@@ -101,16 +100,16 @@ io.on('connection', function(socket) {
 });
 ```
 
-Starting the http server listening on port 3000
+Starting the http server listening on port 8000
 ```javascript
-http.listen(3000, function(){
-    console.log('Web server Active listening on *:3000');
+http.listen(8000, function(){
+    console.log('Web server Active listening on *:8000');
 });
 ```
 
 ####(Web Browser) View Client side application
-Input the IP address of your board plus the port number (3000) 
-For example, http://192.168.1.0:3000
+Input the IP address of your board plus the port number (8000) 
+For example, http://192.168.1.0:8000
 
 Intel(R) XDK IoT Edition
 -------------------------------------------

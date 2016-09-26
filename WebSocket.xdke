@@ -21,8 +21,8 @@
         "name": "LICENSE.md"
       },
       "main.js": {
-        "previousModTime": 1474884078461,
-        "modified": 1474884078461,
+        "previousModTime": 1474904587192,
+        "modified": 1474904587192,
         "seen": true,
         "name": "main.js"
       },
@@ -33,8 +33,8 @@
         "name": "package.json"
       },
       "README.md": {
-        "previousModTime": 1474881759084,
-        "modified": 1474881759084,
+        "previousModTime": 1474897872960,
+        "modified": 1474897872960,
         "seen": true,
         "name": "README.md"
       },
@@ -45,8 +45,8 @@
         "name": "WebSocket.xdk"
       },
       "WebSocket.xdke": {
-        "previousModTime": 1474881759451,
-        "modified": 1474881759451,
+        "previousModTime": 1474901088701,
+        "modified": 1474901088701,
         "seen": true,
         "name": "WebSocket.xdke"
       },
@@ -82,35 +82,8 @@
       }
     },
     "boardFileStatus": {
-      "icon.png": {
-        "previousModTime": 1474888108544
-      },
-      "LICENSE.md": {
-        "previousModTime": 1474888108544
-      },
       "main.js": {
-        "previousModTime": 1474888108544
-      },
-      "package.json": {
-        "previousModTime": 1474888108544
-      },
-      "README.md": {
-        "previousModTime": 1474888108544
-      },
-      "websockets_client.png": {
-        "previousModTime": 1474888108544
-      },
-      "client/index.css": {
-        "previousModTime": 1474888108544
-      },
-      "client/index.html": {
-        "previousModTime": 1474888108544
-      },
-      "client/index.js": {
-        "previousModTime": 1474888108544
-      },
-      "xdk/project-info.json": {
-        "previousModTime": 1474888108544
+        "previousModTime": 1474905827804
       }
     }
   }
