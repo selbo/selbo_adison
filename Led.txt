@@ -1,0 +1,66 @@
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pins 9,10,11 as an outputs.
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(11, OUTPUT);
+
+}
+
+// the loop function runs over and over again forever
+void loop() {
+
+  int T_rise_mSec = 255 * 4;
+  int T_fall_mSec = 255 * 4;
+  int ON_state_delay_mSec = 450;
+  int OFF_state_delay_mSec = 40;
+
+  int T_rise = T_rise_mSec / 255;
+  int T_fall = T_fall_mSec / 255;
+
+  int Port_arr[] = {9, 11, 10};
+  int Num_of_ports = sizeof(Port_arr) - 3;
+
+
+
+
+
+  for (int j = 0; j < Num_of_ports; j++) {
+
+
+    //playing fade in
+    for (int i = 0; i <= 255; i++) {
+      analogWrite(Port_arr[j] , i);
+      delay(T_rise);
+    }
+
+    //playing "ON state"
+    analogWrite(Port_arr[j], 255);
+    delay(ON_state_delay_mSec);
+
+    //playing fade out
+    for (int i = 255; i >= 0; i--) {
+      analogWrite(Port_arr[j], i);
+      delay(T_fall);
+    }
+
+    //playing "OFF state"
+    analogWrite(Port_arr[j], 0);
+    delay(OFF_state_delay_mSec);
+  }
+
+  // all 3 leds blinking
+  for (int k = 0; k <= 3; k++) {
+
+    analogWrite(9 , 255);
+    analogWrite(10 , 255);
+    analogWrite(11 , 255);
+    delay(100);
+
+    analogWrite(9 , 0);
+    analogWrite(10 , 0);
+    analogWrite(11 , 0);
+    delay(100);
+  }
+
+}
