@@ -1,0 +1,117 @@
+{
+  "project": {
+    "projectSettingsVersion": "2.0.0",
+    "initialAutoPluginCount": 0,
+    "currentBuildConfiguration": "Android",
+    "projectFiles": {},
+    "projectDirectories": {}
+  },
+  "iot-tab": {
+    "fileStatus": {
+      "icon.png": {
+        "previousModTime": 1474881759074,
+        "modified": 1474881759074,
+        "seen": true,
+        "name": "icon.png"
+      },
+      "LICENSE.md": {
+        "previousModTime": 1474881759074,
+        "modified": 1474881759074,
+        "seen": true,
+        "name": "LICENSE.md"
+      },
+      "main.js": {
+        "previousModTime": 1474884078461,
+        "modified": 1474884078461,
+        "seen": true,
+        "name": "main.js"
+      },
+      "package.json": {
+        "previousModTime": 1474881759074,
+        "modified": 1474881759074,
+        "seen": true,
+        "name": "package.json"
+      },
+      "README.md": {
+        "previousModTime": 1474881759084,
+        "modified": 1474881759084,
+        "seen": true,
+        "name": "README.md"
+      },
+      "WebSocket.xdk": {
+        "previousModTime": 1474881759424,
+        "modified": 1474881759424,
+        "seen": true,
+        "name": "WebSocket.xdk"
+      },
+      "WebSocket.xdke": {
+        "previousModTime": 1474881759451,
+        "modified": 1474881759451,
+        "seen": true,
+        "name": "WebSocket.xdke"
+      },
+      "websockets_client.png": {
+        "previousModTime": 1474881759084,
+        "modified": 1474881759084,
+        "seen": true,
+        "name": "websockets_client.png"
+      },
+      "client/index.css": {
+        "previousModTime": 1474881759090,
+        "modified": 1474881759090,
+        "seen": true,
+        "name": "client/index.css"
+      },
+      "client/index.html": {
+        "previousModTime": 1474881759090,
+        "modified": 1474881759090,
+        "seen": true,
+        "name": "client/index.html"
+      },
+      "client/index.js": {
+        "previousModTime": 1474881759090,
+        "modified": 1474881759090,
+        "seen": true,
+        "name": "client/index.js"
+      },
+      "xdk/project-info.json": {
+        "previousModTime": 1474881759396,
+        "modified": 1474881759396,
+        "seen": true,
+        "name": "xdk/project-info.json"
+      }
+    },
+    "boardFileStatus": {
+      "icon.png": {
+        "previousModTime": 1474888108544
+      },
+      "LICENSE.md": {
+        "previousModTime": 1474888108544
+      },
+      "main.js": {
+        "previousModTime": 1474888108544
+      },
+      "package.json": {
+        "previousModTime": 1474888108544
+      },
+      "README.md": {
+        "previousModTime": 1474888108544
+      },
+      "websockets_client.png": {
+        "previousModTime": 1474888108544
+      },
+      "client/index.css": {
+        "previousModTime": 1474888108544
+      },
+      "client/index.html": {
+        "previousModTime": 1474888108544
+      },
+      "client/index.js": {
+        "previousModTime": 1474888108544
+      },
+      "xdk/project-info.json": {
+        "previousModTime": 1474888108544
+      }
+    }
+  }
+}
